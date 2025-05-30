@@ -1,0 +1,5 @@
+Project Overview:
+This project uses APIs to fetch and analyze real-time aircraft telemetry data. 
+It focuses on identifying and visualizing aircraft behavior over user-defined geographic regions, with an emphasis on military activity. 
+The goal of this project is to explore how public data can be used for situational awareness, surveillance, and flight intelligence.
+
