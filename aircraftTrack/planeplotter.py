@@ -9,10 +9,10 @@ color_list = ['red', 'blue', 'green', 'purple', 'orange', 'darkred', 'lightred',
  'white', 'pink', 'lightblue', 'lightgreen', 'gray', 'black', 'lightgray']
 
 
-map = folium.Map(location=(40.1020, -88.2272), max_bounds=True)
+map = folium.Map(location=(40, -100), max_bounds=True, zoom_start= 4)
 # figure out how to make markers from csv
 for index, row in df.iterrows():
-    if row['lat'] != 0 and row['lon'] != 0:
+    if row['lat'] != 0 and row['lon'] != 0 and row['hex'].lower().startswith('a'):
         html=f"""
             <b>Callsign:</b> {row['r']} <br>
             <b>Type:</b> {row['desc']}<br>
@@ -35,12 +35,3 @@ for index, row in df.iterrows():
 map.save("aircraftSurveillance/aircraft_plot.html")
 
 
-
-"""
-folium.Marker(
-    location=[40.1020, -88.2272],
-    popup="UIUC C-130\nAltitude: 18000 ft",
-    tooltip="Click for details",
-    icon=folium.Icon(color="blue", icon="plane", prefix='fa')
-)
-"""
